@@ -2,16 +2,12 @@
 <%@ page contentType="text/html; charset=UTF-8" session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>Sample</title>
 </head>
 <body>
 <h1>
-	한글테스트
-	Hello world!<br/>   
-	${map.val1}<br/>
-	${map.val2}
+	Sample page
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>

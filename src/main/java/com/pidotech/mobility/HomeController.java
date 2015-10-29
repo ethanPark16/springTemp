@@ -2,6 +2,7 @@ package com.pidotech.mobility;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -31,7 +32,12 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("val1", "testtest");
+		map.put("val2", "testtesttest22");
+		
 		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("map", map );
 		
 		return "home";
 	}
