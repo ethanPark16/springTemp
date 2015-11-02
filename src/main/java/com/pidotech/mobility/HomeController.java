@@ -39,7 +39,7 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		model.addAttribute("map", map );
 		
-		return "home";
+		return "main";
 	}
 	
 }

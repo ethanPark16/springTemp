@@ -17,9 +17,9 @@ public class SampleDAO extends AbstractMapper {
 	 * @param vo SampleVO
 	 * @exception Exception
 	 */
-	public HashMap selectUser(SampleVO vo) throws Exception {
+	public HashMap<String, String> selectUser(SampleVO vo) throws Exception {
 		
-		HashMap result = selectOne("sample.selectUser", vo);
+		HashMap<String, String> result = selectOne("sample.selectUser", vo);
 		
 		logger.debug("user_id : "+result.get("user_id"));
 		return null;

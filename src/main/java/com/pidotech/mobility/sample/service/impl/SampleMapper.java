@@ -3,10 +3,10 @@ package com.pidotech.mobility.sample.service.impl;
 import java.util.HashMap;
 import java.util.List;
 
-import com.pidotech.cmm.dataaccess.Mapper;
+import com.pidotech.cmm.dataaccess.SqlMapper;
 import com.pidotech.mobility.sample.service.SampleVO;
 
-@Mapper("sampleMapper")
+@SqlMapper("sampleMapper")
 public interface SampleMapper {
 	
 	/**

@@ -14,7 +14,7 @@
     
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.pidotech.mobility"/>
-		<property name="annotationClass" value="com.pidotech.cmm.dataaccess.Mapper"/>
+		<property name="annotationClass" value="com.pidotech.cmm.dataaccess.SqlMapper"/>
 		<property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>
 	</bean>
             
