@@ -1,5 +1,6 @@
 package com.pidotech.mobility.sample.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ public interface SampleService {
 	 * @param SampleVO
 	 * @exception Exception
 	 */
-	public SampleVO selectUser(SampleVO vo) throws Exception;
+	public HashMap<String, String> selectUser(SampleVO vo) throws Exception;
 	
 	/**
 	 * selectUserList - 유저 리스트 조회
@@ -31,7 +32,7 @@ public interface SampleService {
 	 * @param SampleVO
 	 * @exception Exception
 	 */
-	public void insertUser(SampleVO vo) throws Exception;
+	public int insertUser(SampleVO vo) throws Exception;
 	
 	/**
 	 * updateUser - 유저정보 수정
@@ -40,7 +41,7 @@ public interface SampleService {
 	 * @param SampleVO
 	 * @exception
 	 */
-	public void updateUser(SampleVO vo) throws Exception;
+	public int updateUser(SampleVO vo) throws Exception;
 	
 	/**
 	 * deleteUser - 유저삭제
@@ -49,5 +50,5 @@ public interface SampleService {
 	 * @param SampleVO
 	 * @exception Exception
 	 */
-	public void deleteUser(SampleVO vo) throws Exception;
+	public int deleteUser(SampleVO vo) throws Exception;
 }

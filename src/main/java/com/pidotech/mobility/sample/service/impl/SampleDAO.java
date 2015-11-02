@@ -14,10 +14,10 @@ public class SampleDAO extends AbstractMapper {
 	 * selectUser - 단일 사용자 정보 조회
 	 *
 	 * @return SampleVO
-	 * @param SampleVO
+	 * @param vo SampleVO
 	 * @exception Exception
 	 */
-	public SampleVO selectUser(SampleVO vo) throws Exception {
+	public HashMap selectUser(SampleVO vo) throws Exception {
 		
 		HashMap result = selectOne("sample.selectUser", vo);
 		
@@ -29,11 +29,20 @@ public class SampleDAO extends AbstractMapper {
 	 * selectUserList - 사용자 리스트 조회
 	 *
 	 * @return List<SampleVO>
-	 * @param SampleVO
+	 * @param vo SampleVO
 	 * @exception Exception
 	 */
 	public List<SampleVO> selectUserList(SampleVO vo) throws Exception {
 		
 		return selectList("sample.selectUserList", vo);
+	}
+	
+	
+	public int insertUser(SampleVO vo) throws Exception {
+		return insert("sample.insertUser", vo);
+	}
+	
+	public int deleteUser(HashMap<String, String> map) throws Exception {
+		return 0;
 	}
 }

@@ -1,5 +1,6 @@
 package com.pidotech.mobility.sample.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.pidotech.cmm.dataaccess.Mapper;
@@ -15,7 +16,7 @@ public interface SampleMapper {
 	 * @param SampleVO
 	 * @exception Exception
 	 */
-	public SampleVO selectUser(SampleVO vo) throws Exception;
+	public HashMap<String, String> selectUser(SampleVO vo) throws Exception;
 	
 	/**
 	 * selectUserList - 사용자 리스트 조회
@@ -25,4 +26,6 @@ public interface SampleMapper {
 	 * @exception Exception
 	 */
 	public List<SampleVO> selectUserList(SampleVO vo) throws Exception;
+	
+	public int updateUser(HashMap<String, String> map) throws Exception;
 }

@@ -1,5 +1,6 @@
 package com.pidotech.mobility.sample.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -22,11 +23,13 @@ import com.pidotech.mobility.sample.service.SampleVO;
 public class SampleServiceImpl implements SampleService {
 	@Autowired
 	public SampleDAO sampleDAO;
+	@Autowired
+	public SampleDAO sampleMapper;
 
 	@Override
-	public SampleVO selectUser(SampleVO vo) throws Exception {
+	public HashMap<String, String> selectUser(SampleVO vo) throws Exception {
 		// TODO Auto-generated method stub
-		return sampleDAO.selectUser(vo); 
+		return sampleMapper.selectUser(vo); 
 	}
 
 	@Override
@@ -36,21 +39,21 @@ public class SampleServiceImpl implements SampleService {
 	}
 
 	@Override
-	public void insertUser(SampleVO vo) throws Exception {
+	public int insertUser(SampleVO vo) throws Exception {
 		// TODO Auto-generated method stub
-
+		return sampleDAO.insertUser(vo);
 	}
 
 	@Override
-	public void updateUser(SampleVO vo) throws Exception {
+	public int updateUser(SampleVO vo) throws Exception {
 		// TODO Auto-generated method stub
-
+		return 0;
 	}
 
 	@Override
-	public void deleteUser(SampleVO vo) throws Exception {
+	public int deleteUser(SampleVO vo) throws Exception {
 		// TODO Auto-generated method stub
-
+		return 0;
 	}
 
 }
