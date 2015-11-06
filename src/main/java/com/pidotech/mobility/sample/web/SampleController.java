@@ -38,7 +38,7 @@ public class SampleController {
 	public SampleService sampleService;
 	
 	/**
-	 * samplePage
+	 * samplePage - dataTable
 	 *
 	 * @return String
 	 * @param request HttpServletRequest
@@ -46,7 +46,7 @@ public class SampleController {
 	 * @param model ModelMap
 	 * @exception Exception
 	 */
-	@RequestMapping(value="/sample/samplePage.do")
+	@RequestMapping(value="/sample/dataTable.do")
 	public String samplePage (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -58,7 +58,28 @@ public class SampleController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "/sample/Sample";
+		return "/sample/table";
+	}
+	
+	/**
+	 * dataTableList (VO & DAO 사용 예제)
+	 *
+	 * @return String
+	 * @param request HttpServletRequest
+	 * @param model ModelMap
+	 * @exception Exception
+	 */
+	@RequestMapping(value="/sample/dataTableList.do")
+	public String getSampleUserList (HttpServletRequest request, ModelMap model) throws Exception {
+		
+		logger.info("!! getSampleUserList ");
+		
+		SampleVO vo = new SampleVO();
+		List<SampleVO> result = sampleService.selectUserList(vo); 
+		
+		model.addAttribute("dataList", result);
+		
+		return "/sample/table";
 	}
 	
 	/**
@@ -80,27 +101,6 @@ public class SampleController {
 		result = sampleService.selectUser(vo); 
 		
 		model.addAttribute("dataMap", result);
-		
-		return "/sample/Sample";
-	}
-	
-	/**
-	 * getSempleUserList (VO & DAO 사용 예제)
-	 *
-	 * @return String
-	 * @param request HttpServletRequest
-	 * @param model ModelMap
-	 * @exception Exception
-	 */
-	@RequestMapping(value="/sample/getSampleUserList.do")
-	public String getSampleUserList (HttpServletRequest request, ModelMap model) throws Exception {
-		
-		logger.info("!! getSampleUserList ");
-		
-		SampleVO vo = new SampleVO();
-		List<SampleVO> result = sampleService.selectUserList(vo); 
-		
-		model.addAttribute("dataList", result);
 		
 		return "/sample/Sample";
 	}

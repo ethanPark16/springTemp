@@ -15,7 +15,14 @@ public class SampleVO {
 	private String user_name;
 	private String user_pw;
 	private String regist_user;
+	private String regist_dt;
 	
+	public String getRegist_dt() {
+		return regist_dt;
+	}
+	public void setRegist_dt(String regist_dt) {
+		this.regist_dt = regist_dt;
+	}
 	public String getUser_id() {
 		return user_id;
 	}
