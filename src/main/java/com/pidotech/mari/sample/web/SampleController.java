@@ -1,4 +1,4 @@
-package com.pidotech.mobility.sample.web;
+package com.pidotech.mari.sample.web;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -16,9 +16,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.pidotech.mobility.HomeController;
-import com.pidotech.mobility.sample.service.SampleService;
-import com.pidotech.mobility.sample.service.SampleVO;
+import com.pidotech.mari.HomeController;
+import com.pidotech.mari.sample.service.SampleService;
+import com.pidotech.mari.sample.service.SampleVO;
 
 /**
  * SampleController.java

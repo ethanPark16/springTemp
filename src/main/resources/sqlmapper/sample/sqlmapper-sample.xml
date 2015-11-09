@@ -7,11 +7,11 @@
         select user_id, user_name from mobility.user_info_mst where user_id = #{user_id}
     </select>
     
-    <select id="selectUserList" resultType="com.pidotech.mobility.sample.service.SampleVO">
+    <select id="selectUserList" resultType="com.pidotech.mari.sample.service.SampleVO">
         select user_id, user_name, regist_dt from mobility.user_info_mst
     </select>
     
-    <insert id="insertUser" parameterType="com.pidotech.mobility.sample.service.SampleVO" >
+    <insert id="insertUser" parameterType="com.pidotech.mari.sample.service.SampleVO" >
     	insert into mobility.user_info_mst (user_id, user_pw, user_name, regist_user, regist_dt) 
     	values (#{user_id}, #{user_pw}, #{user_name}, #{regist_user}, Convert(Char(6), GetDate(), 12) + Replace(Convert(Char(8), GetDate(), 24),':',''))
     </insert>

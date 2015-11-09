@@ -1,12 +1,12 @@
-package com.pidotech.mobility.sample.service.impl;
+package com.pidotech.mari.sample.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.pidotech.cmm.dataaccess.AbstractMapper;
-import com.pidotech.mobility.sample.service.SampleVO;
+import com.pidotech.mari.cmm.dataaccess.AbstractMapper;
+import com.pidotech.mari.sample.service.SampleVO;
 
 @Repository("sampleDAO")
 public class SampleDAO extends AbstractMapper {

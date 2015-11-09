@@ -1,4 +1,4 @@
-package com.pidotech.mobility.sample.service;
+package com.pidotech.mari.sample.service;
 
 import java.util.HashMap;
 import java.util.List;

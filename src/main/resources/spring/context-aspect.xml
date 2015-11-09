@@ -10,7 +10,7 @@
     
     <!-- Exception 발생시 후처리를 위한 AOP설정  -->
     <aop:config>
-        <aop:pointcut id="serviceMethod" expression="execution(* com.pidotech.mobility..impl.*Impl.*(..)) or execution(* com.pidotech.cmm..impl.*Impl.*(..))" />
+        <aop:pointcut id="serviceMethod" expression="execution(* com.pidotech.mari..impl.*Impl.*(..))" />
 
         <aop:aspect ref="exceptionTransfer">
             <aop:after-throwing throwing="exception" pointcut-ref="serviceMethod" method="transfer" />
@@ -18,7 +18,7 @@
     </aop:config>
     
     <!-- Exception 발생시 후처리 -->
-    <bean id="exceptionTransfer" class="com.pidotech.cmm.aspect.ExceptionTransfer"></bean>  
+    <bean id="exceptionTransfer" class="com.pidotech.mari.cmm.aspect.ExceptionTransfer"></bean>  
     
      <!-- transaction 처리를 위한 AOP설정 -->
     <aop:config>

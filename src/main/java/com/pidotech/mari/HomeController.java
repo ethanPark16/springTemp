@@ -1,4 +1,4 @@
-package com.pidotech.mobility;
+package com.pidotech.mari;
 
 import java.text.DateFormat;
 import java.util.Date;

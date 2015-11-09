@@ -1,4 +1,4 @@
-package com.pidotech.cmm.dataaccess;
+package com.pidotech.mari.cmm.dataaccess;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

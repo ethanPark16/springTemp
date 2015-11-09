@@ -1,4 +1,4 @@
-package com.pidotech.cmm.exception;
+package com.pidotech.mari.cmm.exception;
 
 import java.text.MessageFormat;
 

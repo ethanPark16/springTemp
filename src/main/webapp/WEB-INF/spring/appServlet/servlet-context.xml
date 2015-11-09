@@ -37,7 +37,7 @@
 		</beans:property>
 	</beans:bean>
 	
-	<context:component-scan base-package="com.pidotech.mobility" />
+	<context:component-scan base-package="com.pidotech.mari" />
 	
 	
 </beans:beans>

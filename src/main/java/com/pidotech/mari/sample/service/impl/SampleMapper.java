@@ -1,10 +1,10 @@
-package com.pidotech.mobility.sample.service.impl;
+package com.pidotech.mari.sample.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
 
-import com.pidotech.cmm.dataaccess.SqlMapper;
-import com.pidotech.mobility.sample.service.SampleVO;
+import com.pidotech.mari.cmm.dataaccess.SqlMapper;
+import com.pidotech.mari.sample.service.SampleVO;
 
 @SqlMapper("sampleMapper")
 public interface SampleMapper {

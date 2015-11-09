@@ -1,4 +1,4 @@
-package com.pidotech.cmm.dataaccess;
+package com.pidotech.mari.cmm.dataaccess;
 
 import java.util.List;
 import java.util.Map;
@@ -12,7 +12,7 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.pidotech.mobility.HomeController;
+import com.pidotech.mari.HomeController;
 
 public abstract class AbstractMapper extends SqlSessionDaoSupport{
 	protected static final Logger logger = LoggerFactory.getLogger(AbstractMapper.class);

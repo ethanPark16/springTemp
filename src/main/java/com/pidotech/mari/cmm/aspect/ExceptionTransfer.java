@@ -1,11 +1,11 @@
-package com.pidotech.cmm.aspect;
+package com.pidotech.mari.cmm.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
 
-import com.pidotech.cmm.exception.BizException;
+import com.pidotech.mari.cmm.exception.BizException;
 
 /**
  * ExceptionTransfer : 
