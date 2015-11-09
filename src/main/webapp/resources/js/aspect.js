@@ -22,6 +22,7 @@ var aop = {
 		pointcut : '*', 
 		advice : function(){}
 	},
+	
 	aspect : function (pointcut, advice) {
 		var ns = window;	// window 객체
 		for(var member in ns) {

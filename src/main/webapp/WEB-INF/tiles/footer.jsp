@@ -7,3 +7,4 @@
 	</div>
 	<strong>Copyright &copy; 2015-2016 <a href="http://www.pidotech.com">PIDOTECH</a>.</strong> All rights reserved.
 </footer>
+<script src="/resources/js/init.js"></script>

@@ -38,6 +38,30 @@ public class SampleController {
 	public SampleService sampleService;
 	
 	/**
+	 * samplePage
+	 *
+	 * @return String
+	 * @param request HttpServletRequest
+	 * @param locale Locale
+	 * @param model ModelMap
+	 * @exception Exception
+	 */
+	@RequestMapping(value= {"/", "/sample/samplePageMain.do"})
+	public String samplePageMain (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
+		
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "/sample/main";
+	}
+	
+	/**
 	 * samplePage - dataTable
 	 *
 	 * @return String

@@ -4,7 +4,6 @@
 <tiles:insertDefinition name="adminTemplate">
 <tiles:putAttribute name="content">
 
-<input type=text id="test" value = "" />
 <!-- Content Header (Page header) -->
 <section class="content-header">
 	<h1>
@@ -26,7 +25,7 @@
 					<h3 class="box-title">Hover Data Table</h3>
 				</div><!-- /.box-header -->
 				<div class="box-body">
-					<table id="example2" class="table table-bordered table-hover">
+					<table id="example1" class="table table-bordered table-hover">
 						<thead>
 							<tr>
 								<th>User ID</th>
@@ -42,6 +41,13 @@
 								<td>${list.regist_dt }</td>
 							</tr>
 						</c:forEach>
+						<c:forEach begin="0" end="5000" step="1" varStatus="i">
+							<tr>
+								<td>${i.count }</td>
+								<td>${i.count } test</td>
+								<td>test</td>
+							</tr>
+						</c:forEach>
 						</tbody>
 					</table>
 				</div>
@@ -50,52 +56,16 @@
 	</div>
 </section>
 
+</tiles:putAttribute>
+</tiles:insertDefinition>
+
 <!-- script area -->
 <script >
 /*
  * 렌더링 순서에 따라 화면 로직을 위한 javascript는 문서 하단에 위치시켜주세요. 
  */
 $(document).ready(function(){
-	test2();
-	test3();
-	test4();
-	test5();
-	test6();
-	test7();
-	test8();
-	test9();
-	test0();
-	test11();
-	test();
+	$("#example1").DataTable();
 });
-function test() {
-	console.log('테스트 입니다.');
-}
-
-function test2() {
-}
-function test3() {
-}
-function test4() {
-}
-function test5() {
-}
-function test6() {
-}
-function test7() {
-}
-function test8() {
-}
-function test9() {
-}
-function test0() {
-}
-function test11() {
-}
 </script>
 <!-- script area -->
-
-
-</tiles:putAttribute>
-</tiles:insertDefinition>
-<script src="/resources/js/init.js"></script>
