@@ -41,13 +41,6 @@
 								<td>${list.regist_dt }</td>
 							</tr>
 						</c:forEach>
-						<c:forEach begin="0" end="5000" step="1" varStatus="i">
-							<tr>
-								<td>${i.count }</td>
-								<td>${i.count } test</td>
-								<td>test</td>
-							</tr>
-						</c:forEach>
 						</tbody>
 					</table>
 				</div>
@@ -55,9 +48,6 @@
 		</div>
 	</div>
 </section>
-
-</tiles:putAttribute>
-</tiles:insertDefinition>
 
 <!-- script area -->
 <script >
@@ -69,3 +59,6 @@ $(document).ready(function(){
 });
 </script>
 <!-- script area -->
+</tiles:putAttribute>
+</tiles:insertDefinition>
+

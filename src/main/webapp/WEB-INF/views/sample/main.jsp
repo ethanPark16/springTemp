@@ -10,14 +10,21 @@
 	<ul>
 		<li>
 			<h1>
-				<a href="/sample/dataTableList.do">Data Tables</a>
+				Tables
 				<small>advanced tables</small>
 			</h1>
+			<ul>
+				<li><h3><a href="/sample/dataTableList.do">Data Table</a></h3></li>
+				<li><h3><a href="/sample/handsontable.do">handsontable</a></h3></li>
+			</ul>
 		</li>
 		<li>
 			<h1>
-				<a href="">Input Form</a>
+				Forms
 			</h1>
+			<ul>
+				<li><h3><a href="/sample/generalForm.do">General Form</a></h3></li>
+			</ul>
 		</li>
 	</ul>
 </section>

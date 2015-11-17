@@ -1,1 +1,1 @@
-{"ide":{},"libs":["ecma5","browser"],"plugins":{"guess-types":{},"outline":{}}}
+{"ide":{},"plugins":{"guess-types":{},"outline":{},"browser-extension":{},"jquery-ui1-12":{},"jquery-extension":{}},"libs":["ecma5","browser","jquery"]}

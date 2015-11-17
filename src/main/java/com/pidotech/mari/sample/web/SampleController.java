@@ -38,6 +38,30 @@ public class SampleController {
 	public SampleService sampleService;
 	
 	/**
+	 * login
+	 *
+	 * @return String
+	 * @param request HttpServletRequest
+	 * @param locale Locale
+	 * @param model ModelMap
+	 * @exception Exception
+	 */
+	@RequestMapping(value= {"/login.do"})
+	public String login (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
+		
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "/login";
+	}
+	
+	/**
 	 * samplePage
 	 *
 	 * @return String
@@ -70,8 +94,8 @@ public class SampleController {
 	 * @param model ModelMap
 	 * @exception Exception
 	 */
-	@RequestMapping(value="/sample/dataTable.do")
-	public String samplePage (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
+	@RequestMapping(value="/sample/dataTable.do") 
+	public String dataTable (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
@@ -83,6 +107,54 @@ public class SampleController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "/sample/table";
+	}
+	
+	/**
+	 * samplePage - handsontable
+	 *
+	 * @return String
+	 * @param request HttpServletRequest
+	 * @param locale Locale
+	 * @param model ModelMap
+	 * @exception Exception
+	 */
+	@RequestMapping(value="/sample/handsontable.do")
+	public String handsontable (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
+		
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "/sample/handsontable";
+	}
+	
+	/**
+	 * samplePage - general form
+	 *
+	 * @return String
+	 * @param request HttpServletRequest
+	 * @param locale Locale
+	 * @param model ModelMap
+	 * @exception Exception
+	 */
+	@RequestMapping(value="/sample/generalForm.do")
+	public String generalForm (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
+		
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "/sample/form";
 	}
 	
 	/**

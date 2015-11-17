@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/security
+			http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+    <sec:http pattern="/resources/**" security="none"/>
+    <sec:http>
+    	<sec:logout logout-url="/logout.do"/>
+    	<sec:access-denied-handler error-page="/accessDenied.do"/>
+    	<sec:form-login login-page="/login.do" default-target-url="/"
+    				 username-parameter="userid" password-parameter="userpw" />
+    </sec:http>
+	<sec:authentication-manager>
+		<sec:authentication-provider user-service-ref="JdbcUserDetailsManager"></sec:authentication-provider>
+	</sec:authentication-manager>
+	
+	<bean id="JdbcUserDetailsManager" class="com.pidotech.mari.cmm.security.MariJdbcUserDetailsManager">
+		<property name="usersByUsernameQuery" value="SELECT USER_ID, PASSWORD, 1 ENABLED, USER_NM, DEPT_ID, DEPT_NM, ESNTL_ID FROM MOBILITY.USER_INFO_MST WHERE USER_ID = ?"></property>
+		<property name="authoritiesByUsernameQuery" value="SELECT A.SCRTY_DTRMN_TRGET_ID USER_ID, A.AUTHOR_CODE AUTHORITY FROM MOBILITY.LETTNEMPLYRSCRTYESTBS A, MOBILITY.USER_INFO_MST B WHERE A.SCRTY_DTRMN_TRGET_ID = B.ESNTL_ID AND B.USER_ID = ?"></property>
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mapperClass" value="com.pidotech.mari.cmm.security.MariSessionMapping"/>
+	</bean>
+	
+</beans>

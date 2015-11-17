@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="/resources/css/AdminLTE.css">
     <link rel="stylesheet" href="/resources/css/skins/skin-black.css">
 
+	<link rel="stylesheet" href="/resources/css/handsontable.full.css">    
+
 	<!-- jQuery 2.1.4 -->
     <script src="/resources/js/cmm/jQuery-2.1.4.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -24,6 +26,8 @@
     
     <script src="/resources/js/cmm/jquery.dataTables.js"></script>
     <script src="/resources/js/cmm/dataTables.bootstrap.js"></script>
+	<script src="/resources/js/cmm/handsontable.full.js"></script>
+    
 	<!-- require -->
     <script src="/resources/js/cmm/require.js"></script>
     <!-- bootstrap js -->

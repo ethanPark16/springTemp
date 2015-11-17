@@ -22,7 +22,7 @@
     
      <!-- transaction 처리를 위한 AOP설정 -->
     <aop:config>
-        <aop:pointcut id="requiredTx" expression="execution(* com.pidotech.mobility..impl.*Impl.*(..))"/>
+        <aop:pointcut id="requiredTx" expression="execution(* com.pidotech.mari..impl.*Impl.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="requiredTx" />
     </aop:config> 
     
