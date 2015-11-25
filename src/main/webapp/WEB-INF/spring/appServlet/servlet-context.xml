@@ -37,7 +37,8 @@
 		</beans:property>
 	</beans:bean>
 	
-	<context:component-scan base-package="com.pidotech.mari" />
-	
+	<context:component-scan base-package="com.pidotech.mari" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
 	
 </beans:beans>

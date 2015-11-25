@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pidotech.mari.cmm.exception.BizException;
 import com.pidotech.mari.sample.service.SampleService;
 import com.pidotech.mari.sample.service.SampleVO;
 

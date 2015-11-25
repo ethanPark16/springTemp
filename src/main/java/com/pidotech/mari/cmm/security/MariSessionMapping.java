@@ -21,7 +21,7 @@ public class MariSessionMapping extends MariUsersByUsernameMapping {
         String password  = rs.getString("password");
         boolean enabled  = rs.getBoolean("enabled");
 
-        String userNm    = rs.getString("user_nm");
+        String userNm    = rs.getString("user_name");
         String deptId  = rs.getString("dept_id");
         String deptNm    = rs.getString("dept_nm");
 

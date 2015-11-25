@@ -32,7 +32,7 @@ import com.pidotech.mari.sample.service.SampleVO;
  */
 @Controller
 public class SampleController {
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private transient final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	public SampleService sampleService;
@@ -49,7 +49,7 @@ public class SampleController {
 	@RequestMapping(value= {"/login.do"})
 	public String login (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("Welcome Sample! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -73,7 +73,7 @@ public class SampleController {
 	@RequestMapping(value= {"/", "/sample/samplePageMain.do"})
 	public String samplePageMain (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("Welcome Sample! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -97,7 +97,7 @@ public class SampleController {
 	@RequestMapping(value="/sample/dataTable.do") 
 	public String dataTable (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("Welcome Sample! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -121,7 +121,7 @@ public class SampleController {
 	@RequestMapping(value="/sample/handsontable.do")
 	public String handsontable (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("Welcome Sample! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -145,7 +145,7 @@ public class SampleController {
 	@RequestMapping(value="/sample/generalForm.do")
 	public String generalForm (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("Welcome Sample! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -168,7 +168,7 @@ public class SampleController {
 	@RequestMapping(value="/sample/dataTableList.do")
 	public String getSampleUserList (HttpServletRequest request, ModelMap model) throws Exception {
 		
-		logger.info("!! getSampleUserList ");
+		logger.info("Sample !! getSampleUserList ");
 		
 		SampleVO vo = new SampleVO();
 		List<SampleVO> result = sampleService.selectUserList(vo); 

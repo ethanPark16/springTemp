@@ -17,6 +17,7 @@ import org.springframework.security.access.hierarchicalroles.RoleHierarchy;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 
@@ -63,7 +64,6 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 	protected void initDao() throws ApplicationContextException {
 		// TODO Auto-generated method stub
 		super.initDao();
-		
 		try {
 			initMappingSqlQueries();
 		} catch (Exception e) {
@@ -91,7 +91,7 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 	@Override
 	public MariUserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException, DataAccessException {
-		
+		LOGGER.debug("username :::::::::::::: "+username);
 		List<UserDetails> users = loadUsersByUsername(username);
 		
 		if (users.size() == 0) {

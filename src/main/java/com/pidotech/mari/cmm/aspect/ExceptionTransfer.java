@@ -15,12 +15,14 @@ import com.pidotech.mari.cmm.exception.BizException;
  * @author ethan park
  * @since 2015.10.27
  */
+
 public class ExceptionTransfer {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionTransfer.class);
 	
-	public void transfer(JoinPoint thisJoinPoint, Exception exception) throws Exception {
-		
-		Class<?> clazz = thisJoinPoint.getTarget().getClass();
+	public void transfer(JoinPoint joinPoint, Exception exception) throws Exception {
+		LOGGER.debug("execute ExceptionTransfer.transfer ");
+
+		Class<?> clazz = joinPoint.getTarget().getClass();
 		
 		// 비즈니스 서비스에서 업무규칙에 따라 발생시킨 exception 처리
 		if (exception instanceof BizException) {
@@ -59,7 +61,6 @@ public class ExceptionTransfer {
 
 			throw exception;
 		}
-		
 	}
 	
 	protected Logger getLog(Class<?> clazz) {
