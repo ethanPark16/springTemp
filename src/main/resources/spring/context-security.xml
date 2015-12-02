@@ -6,23 +6,43 @@
 			http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 			http://www.springframework.org/schema/security
 			http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+			
+	<sec:http pattern="/resources/**" security="none"></sec:http>
 	
-	<sec:http pattern="/resources/**" security="none"></sec:http>		
-    <sec:http auto-config="false">
+    <sec:http use-expressions="true">
+    	<sec:intercept-url pattern="/login.do" access="permitAll" />
+    	<sec:intercept-url pattern="/**" access="isAuthenticated()" /> 
+    	<sec:session-management invalid-session-url="/login.do">
+    		<sec:concurrency-control expired-url="/login.do" max-sessions="1"/>
+    	</sec:session-management>
     	<sec:logout invalidate-session="true" logout-url="/logout.do" logout-success-url="/"/>
-    	<sec:access-denied-handler error-page="/403.do"/>
-    	<sec:form-login login-page="/login.do" login-processing-url="/j_spring_security" default-target-url="/"
-    				 username-parameter="userid" password-parameter="userpw" />
+    	<sec:access-denied-handler error-page="/403.do" />
+    	<sec:form-login login-page="/login.do" login-processing-url="/j_spring_security" 
+    				default-target-url="/" authentication-failure-url="/login.do?fail=1" 
+					username-parameter="userid" password-parameter="userpw" />
     	<sec:anonymous/>
     </sec:http>
+	
+	<bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" >
+		<constructor-arg name="strength" value="256"></constructor-arg>
+	</bean>
+	
 	<sec:authentication-manager>
-		<sec:authentication-provider user-service-ref="jdbcUserDetailsManager">
-			<sec:password-encoder ref="passwordEncoder"></sec:password-encoder>
+		<sec:authentication-provider user-service-ref="jdbcUserDetailsManager">  
+		<!-- 
+		<sec:authentication-provider >
+		 -->
+		<!-- 
+			<sec:user-service>
+				<sec:user name="ethan@pidotech.com" password="1234" authorities="ROLE_USER"/>
+			</sec:user-service>
+		-->
+			<sec:password-encoder ref="passwordEncoder" hash="sha-256" />
 		</sec:authentication-provider>
 	</sec:authentication-manager>
 	
 	<bean id="jdbcUserDetailsManager" class="com.pidotech.mari.cmm.security.MariJdbcUserDetailsManager">
-		<property name="usersByUsernameQuery" value="SELECT USER_ID, PASSWORD, ENABLED, USER_NAME, DEPT_ID, DEPT_NM, ESNTL_ID FROM MOBILITY.USER_INFO_MST WHERE USER_ID = ?"></property>
+		<property name="usersByUsernameQuery" value="SELECT USER_ID, PASSWORD, ENABLED, USER_NAME, ORGNZT_ID, ORGNZT_NM, ESNTL_ID FROM MOBILITY.USER_INFO_MST WHERE USER_ID = ?"></property>
 		<property name="authoritiesByUsernameQuery" value="SELECT A.SCRTY_DTRMN_TRGET_ID USER_ID, A.AUTHOR_CODE AUTHORITY FROM MOBILITY.LETTNEMPLYRSCRTYESTBS A, MOBILITY.USER_INFO_MST B WHERE A.SCRTY_DTRMN_TRGET_ID = B.ESNTL_ID AND B.USER_ID = ?"></property>
 		<property name="mapperClass" value="com.pidotech.mari.cmm.security.MariSessionMapping"/>
 		<property name="roleHierarchy" ref="roleHierarchy"/>
@@ -37,6 +57,5 @@
 		</property>
 	</bean>
 	
-	<bean id="passwordEncoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
 	
 </beans>

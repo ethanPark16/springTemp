@@ -38,7 +38,7 @@
 							<tr>
 								<td><a href="/sample/dataTableList.do">${list.user_id }</a></td>
 								<td>${list.user_name }</td>
-								<td>${list.regist_dt }</td>
+								<td>${list.reg_dt }</td>
 							</tr>
 						</c:forEach>
 						</tbody>

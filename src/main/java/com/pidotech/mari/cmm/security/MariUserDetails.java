@@ -7,6 +7,15 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
+/**
+ * MariUserDetails.java
+ * spring security 의 User 객체를 상속받아 사용자 계정정보를 세션으로 관리한다.
+ *
+ * @author ethan
+ * @since 2015. 11. 25.
+ * @etc 
+ *
+ */
 public class MariUserDetails extends User {
 	private static final long serialVersionUID = 2517403097977414969L;
 	private Object userVO;
@@ -21,10 +30,9 @@ public class MariUserDetails extends User {
      * @param credentialsNonExpired
      * @param accountNonLocked
      * @param authorities
-     * @param egovVO 사용자 VO객체
+     * @param userVO 사용자 VO객체
      * @throws IllegalArgumentException
      */
-	// CHECKSTYLE:OFF
     public MariUserDetails(String username, String password, boolean enabled,
             boolean accountNonExpired, boolean credentialsNonExpired,
             boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities,
@@ -35,15 +43,14 @@ public class MariUserDetails extends User {
 
         this.userVO = userVO;
     }
-    // CHECKSTYLE:ON
 
     /**
-     * EgovUserDetails 생성자
+     * MariUserDetails 생성자
      * 
      * @param username
      * @param password
      * @param enabled
-     * @param egovVO
+     * @param userVO
      * @throws IllegalArgumentException
      */
     public MariUserDetails(String username, String password, boolean enabled, Object userVO) throws IllegalArgumentException {

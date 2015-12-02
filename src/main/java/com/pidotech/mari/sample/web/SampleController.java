@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pidotech.mari.HomeController;
+import com.pidotech.mari.cmm.security.MariUserDetailsHelper;
+import com.pidotech.mari.cmm.service.LoginVO;
 import com.pidotech.mari.sample.service.SampleService;
 import com.pidotech.mari.sample.service.SampleVO;
 
@@ -73,7 +75,16 @@ public class SampleController {
 	@RequestMapping(value= {"/", "/sample/samplePageMain.do"})
 	public String samplePageMain (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
-		logger.info("Welcome Sample! The client locale is {}.", locale);
+		logger.info("Welcome samplePageMain! The client locale is {}.", locale);
+
+		/*	인증여부를 판단하여 사용자 계정정보를 가져오는 방법
+		LoginVO user = (MariUserDetailsHelper.isAuthenticated())
+						? (LoginVO) MariUserDetailsHelper.getAuthenticatedUser() : new LoginVO();
+		 */
+		logger.info("password : "+MariUserDetailsHelper.getHashedPassword("1234"));
+		LoginVO user = (LoginVO) MariUserDetailsHelper.getAuthenticatedUser();
+		
+		logger.info("Login User ID : "+ user.getId());
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -83,30 +94,6 @@ public class SampleController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "/sample/main";
-	}
-	
-	/**
-	 * samplePage - dataTable
-	 *
-	 * @return String
-	 * @param request HttpServletRequest
-	 * @param locale Locale
-	 * @param model ModelMap
-	 * @exception Exception
-	 */
-	@RequestMapping(value="/sample/dataTable.do") 
-	public String dataTable (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
-		
-		logger.info("Welcome Sample! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "/sample/table";
 	}
 	
 	/**
@@ -121,7 +108,7 @@ public class SampleController {
 	@RequestMapping(value="/sample/handsontable.do")
 	public String handsontable (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
-		logger.info("Welcome Sample! The client locale is {}.", locale);
+		logger.info("Welcome handsontable! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -145,7 +132,7 @@ public class SampleController {
 	@RequestMapping(value="/sample/generalForm.do")
 	public String generalForm (HttpServletRequest request, Locale locale, ModelMap model) throws Exception {
 		
-		logger.info("Welcome Sample! The client locale is {}.", locale);
+		logger.info("Welcome generalForm! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);

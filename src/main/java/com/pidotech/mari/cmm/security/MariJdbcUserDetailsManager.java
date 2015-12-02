@@ -21,6 +21,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 
+import com.pidotech.mari.cmm.util.MariObjectUtil;
+
 /**
  * MariJdbcUserDetailsManager.java
  * 
@@ -72,7 +74,7 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 	}
 	
 	private void initMappingSqlQueries() throws Exception {
-		Class<?> clazz = loadClass(this.mapperClass);
+		Class<?> clazz = MariObjectUtil.loadClass(this.mapperClass);
 		Constructor<?> constructor = clazz.getConstructor(new Class[] {DataSource.class, String.class });
         Object[] params = new Object[] { getDataSource(), getUsersByUsernameQuery() };
         
@@ -91,7 +93,8 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 	@Override
 	public MariUserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException, DataAccessException {
-		LOGGER.debug("username :::::::::::::: "+username);
+		LOGGER.debug("loadUserByUsername  :::::::::::::: "+username);
+		
 		List<UserDetails> users = loadUsersByUsername(username);
 		
 		if (users.size() == 0) {
@@ -148,23 +151,4 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 
         return loadUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
     }
-	
-	/**
-     * 클래스명으로 객체를 로딩한다.
-     * 
-     * @param className
-     * @return
-     * @throws ClassNotFoundException
-     * @throws Exception
-     */
-	public static Class<?> loadClass(String className) throws ClassNotFoundException, Exception {
-
-		Class<?> clazz = Thread.currentThread().getContextClassLoader().loadClass(className);
-
-		if (clazz == null) {
-			clazz = Class.forName(className);
-		}
-
-		return clazz;
-	}
 }

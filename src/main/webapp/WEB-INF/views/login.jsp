@@ -15,7 +15,7 @@
 	
 	<!-- jQuery 2.1.4 -->
 	<script src="/resources/js/cmm/jQuery-2.1.4.min.js"></script>
-	<script src="/resources/plugins/iCheck/icheck.min.js""></script>
+	<script src="/resources/plugins/iCheck/icheck.min.js"></script>
 </head>
   <body class="hold-transition login-page">
     <div class="login-box">
@@ -33,6 +33,9 @@
             <input type="password" name="userpw" class="form-control" placeholder="Password" value="1234">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
+          <c:if test="${param.fail eq '1'}">
+          	<p class="text-red">아이디 또는 비밀번호를 확인하세요</p>
+          </c:if>
           <div class="row">
             <div class="col-xs-8">
               <div class="checkbox icheck">
@@ -46,6 +49,7 @@
             </div><!-- /.col -->
           </div>
         </form>
+        
 <%--
         <div class="social-auth-links text-center">
           <p>- OR -</p>

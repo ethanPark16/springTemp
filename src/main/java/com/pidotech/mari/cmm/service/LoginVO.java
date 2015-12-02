@@ -29,9 +29,9 @@ public class LoginVO implements Serializable {
 	/** 비밀번호 정답 */
 	private String passwordCnsr;
 	/** 조직(부서)ID */
-	private String deptId;
+	private String orgnztId;
 	/** 조직(부서)명 */
-	private String deptNm;
+	private String orgnztNm;
 	/** 로그인 후 이동할 페이지 */
 	private String url;
 	/** 사용자 IP정보 */
@@ -80,17 +80,17 @@ public class LoginVO implements Serializable {
 	public void setPasswordCnsr(String passwordCnsr) {
 		this.passwordCnsr = passwordCnsr;
 	}
-	public String getDeptId() {
-		return deptId;
+	public String getOrgnztId() {
+		return orgnztId;
 	}
-	public void setDeptId(String deptId) {
-		this.deptId = deptId;
+	public void setOrgnztId(String orgnztId) {
+		this.orgnztId = orgnztId;
 	}
-	public String getDeptNm() {
-		return deptNm;
+	public String getOrgnztNm() {
+		return orgnztNm;
 	}
-	public void setDeptNm(String deptNm) {
-		this.deptNm = deptNm;
+	public void setOrgnztNm(String orgnztNm) {
+		this.orgnztNm = orgnztNm;
 	}
 	public String getUrl() {
 		return url;

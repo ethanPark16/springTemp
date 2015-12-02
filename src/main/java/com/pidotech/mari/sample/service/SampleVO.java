@@ -14,15 +14,9 @@ public class SampleVO {
 	private String user_id;
 	private String user_name;
 	private String user_pw;
-	private String regist_user;
-	private String regist_dt;
+	private String reg_id;
+	private String reg_dt;
 	
-	public String getRegist_dt() {
-		return regist_dt;
-	}
-	public void setRegist_dt(String regist_dt) {
-		this.regist_dt = regist_dt;
-	}
 	public String getUser_id() {
 		return user_id;
 	}
@@ -41,11 +35,16 @@ public class SampleVO {
 	public void setUser_pw(String user_pw) {
 		this.user_pw = user_pw;
 	}
-	public String getRegist_user() {
-		return regist_user;
+	public String getReg_id() {
+		return reg_id;
 	}
-	public void setRegist_user(String regist_user) {
-		this.regist_user = regist_user;
+	public void setReg_id(String reg_id) {
+		this.reg_id = reg_id;
 	}
-	
+	public String getReg_dt() {
+		return reg_dt;
+	}
+	public void setReg_dt(String reg_dt) {
+		this.reg_dt = reg_dt;
+	}
 }
