@@ -10,7 +10,7 @@ import com.pidotech.mari.cmm.exception.BizException;
 /**
  * ExceptionTransfer : 
  * 	
- * 	¾÷¹«»ó ¹ß»ı½ÃÅ² BizException, RuntimeException, ³ª¸ÓÁö exception¿¡ ´ëÇÑ ·Î±ë°ú throw¸¦ ´ã´ç
+ * 	ì—…ë¬´ìƒ ë°œìƒì‹œí‚¨ BizException, RuntimeException, ë‚˜ë¨¸ì§€ exceptionì— ëŒ€í•œ ë¡œê¹…ê³¼ throwë¥¼ ë‹´ë‹¹
  * 
  * @author ethan park
  * @since 2015.10.27
@@ -24,12 +24,12 @@ public class ExceptionTransfer {
 
 		Class<?> clazz = joinPoint.getTarget().getClass();
 		
-		// ºñÁî´Ï½º ¼­ºñ½º¿¡¼­ ¾÷¹«±ÔÄ¢¿¡ µû¶ó ¹ß»ı½ÃÅ² exception Ã³¸®
+		// ë¹„ì¦ˆë‹ˆìŠ¤ ì„œë¹„ìŠ¤ì—ì„œ ì—…ë¬´ê·œì¹™ì— ë”°ë¼ ë°œìƒì‹œí‚¨ exception ì²˜ë¦¬
 		if (exception instanceof BizException) {
 			LOGGER.debug("Exception case :: BizException ");
 
 			BizException be = (BizException) exception;
-			//wrapp µÈ Exception ÀÖ´Â °æ¿ì error ¿øÀÎÀ¸·Î Ãâ·ÂÇØÁØ´Ù.
+			//wrapp ëœ Exception ìˆëŠ” ê²½ìš° error ì›ì¸ìœ¼ë¡œ ì¶œë ¥í•´ì¤€ë‹¤.
 			if (be.getWrappedException() != null) {
 				Throwable throwable = be.getWrappedException();
 				getLog(clazz).error(be.getMessage(), throwable);
@@ -39,7 +39,7 @@ public class ExceptionTransfer {
 
 			throw be;
 
-		//RuntimeException ÀÌ ¹ß»ı½Ã ³»ºÎ¿¡¼­ DataAccessException ÀÎ °æ¿ì ´Â º°µµ·Ï throw.
+		//RuntimeException ì´ ë°œìƒì‹œ ë‚´ë¶€ì—ì„œ DataAccessException ì¸ ê²½ìš° ëŠ” ë³„ë„ë¡ throw.
 		} else if (exception instanceof RuntimeException) {
 			LOGGER.debug("RuntimeException case :: RuntimeException ");
 

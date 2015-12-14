@@ -12,7 +12,6 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.pidotech.mari.HomeController;
 
 public abstract class AbstractMapper extends SqlSessionDaoSupport{
 	protected static final Logger logger = LoggerFactory.getLogger(AbstractMapper.class);
@@ -23,185 +22,185 @@ public abstract class AbstractMapper extends SqlSessionDaoSupport{
 	}
 	
 	/**
-	 * ÀÔ·Â Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ì…ë ¥ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId -  ÀÔ·Â Ã³¸® SQL mapping Äõ¸® ID
+	 * @param queryId -  ì…ë ¥ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
 	 *
-	 * @return DBMS°¡ Áö¿øÇÏ´Â °æ¿ì insert Àû¿ë °á°ú count
+	 * @return DBMSê°€ ì§€ì›í•˜ëŠ” ê²½ìš° insert ì ìš© ê²°ê³¼ count
 	 */
 	public int insert(String queryId) {
 		return getSqlSession().insert(queryId);
 	}
 
 	/**
-	 * ÀÔ·Â Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ì…ë ¥ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId -  ÀÔ·Â Ã³¸® SQL mapping Äõ¸® ID
-	 * @param parameterObject - ÀÔ·Â Ã³¸® SQL mapping ÀÔ·Â µ¥ÀÌÅÍ¸¦ ¼¼ÆÃÇÑ ÆÄ¶ó¸ŞÅÍ °´Ã¼(º¸Åë VO ¶Ç´Â Map)
+	 * @param queryId -  ì…ë ¥ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param parameterObject - ì…ë ¥ ì²˜ë¦¬ SQL mapping ì…ë ¥ ë°ì´í„°ë¥¼ ì„¸íŒ…í•œ íŒŒë¼ë©”í„° ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
 	 *
-	 * @return DBMS°¡ Áö¿øÇÏ´Â °æ¿ì insert Àû¿ë °á°ú count
+	 * @return DBMSê°€ ì§€ì›í•˜ëŠ” ê²½ìš° insert ì ìš© ê²°ê³¼ count
 	 */
 	public int insert(String queryId, Object parameterObject) {
 		return getSqlSession().insert(queryId, parameterObject);
 	}
 
 	/**
-	 * ¼öÁ¤ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ìˆ˜ì • ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId - ¼öÁ¤ Ã³¸® SQL mapping Äõ¸® ID
+	 * @param queryId - ìˆ˜ì • ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
 	 *
-	 * @return DBMS°¡ Áö¿øÇÏ´Â °æ¿ì update Àû¿ë °á°ú count
+	 * @return DBMSê°€ ì§€ì›í•˜ëŠ” ê²½ìš° update ì ìš© ê²°ê³¼ count
 	 */
 	public int update(String queryId) {
 		return getSqlSession().update(queryId);
 	}
 
 	/**
-	 * ¼öÁ¤ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ìˆ˜ì • ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId - ¼öÁ¤ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param parameterObject - ¼öÁ¤ Ã³¸® SQL mapping ÀÔ·Â µ¥ÀÌÅÍ(key Á¶°Ç ¹× º¯°æ µ¥ÀÌÅÍ)¸¦ ¼¼ÆÃÇÑ ÆÄ¶ó¸ŞÅÍ °´Ã¼(º¸Åë VO ¶Ç´Â Map)
+	 * @param queryId - ìˆ˜ì • ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param parameterObject - ìˆ˜ì • ì²˜ë¦¬ SQL mapping ì…ë ¥ ë°ì´í„°(key ì¡°ê±´ ë° ë³€ê²½ ë°ì´í„°)ë¥¼ ì„¸íŒ…í•œ íŒŒë¼ë©”í„° ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
 	 *
-	 * @return DBMS°¡ Áö¿øÇÏ´Â °æ¿ì update Àû¿ë °á°ú count
+	 * @return DBMSê°€ ì§€ì›í•˜ëŠ” ê²½ìš° update ì ìš© ê²°ê³¼ count
 	 */
 	public int update(String queryId, Object parameterObject) {
 		return getSqlSession().update(queryId, parameterObject);
 	}
 
 	/**
-	 * »èÁ¦ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ì‚­ì œ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId - »èÁ¦ Ã³¸® SQL mapping Äõ¸® ID
+	 * @param queryId - ì‚­ì œ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
 	 *
-	 * @return DBMS°¡ Áö¿øÇÏ´Â °æ¿ì delete Àû¿ë °á°ú count
+	 * @return DBMSê°€ ì§€ì›í•˜ëŠ” ê²½ìš° delete ì ìš© ê²°ê³¼ count
 	 */
 	public int delete(String queryId) {
 		return getSqlSession().delete(queryId);
 	}
 
 	/**
-	 * »èÁ¦ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ì‚­ì œ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId - »èÁ¦ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param parameterObject - »èÁ¦ Ã³¸® SQL mapping ÀÔ·Â µ¥ÀÌÅÍ(ÀÏ¹İÀûÀ¸·Î key Á¶°Ç)¸¦  ¼¼ÆÃÇÑ ÆÄ¶ó¸ŞÅÍ °´Ã¼(º¸Åë VO ¶Ç´Â Map)
+	 * @param queryId - ì‚­ì œ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param parameterObject - ì‚­ì œ ì²˜ë¦¬ SQL mapping ì…ë ¥ ë°ì´í„°(ì¼ë°˜ì ìœ¼ë¡œ key ì¡°ê±´)ë¥¼  ì„¸íŒ…í•œ íŒŒë¼ë©”í„° ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
 	 *
-	 * @return DBMS°¡ Áö¿øÇÏ´Â °æ¿ì delete Àû¿ë °á°ú count
+	 * @return DBMSê°€ ì§€ì›í•˜ëŠ” ê²½ìš° delete ì ìš© ê²°ê³¼ count
 	 */
 	public int delete(String queryId, Object parameterObject) {
 		return getSqlSession().delete(queryId, parameterObject);
 	}
 
 	/**
-	 * ´Ü°ÇÁ¶È¸ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ë‹¨ê±´ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId - ´Ü°Ç Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
+	 * @param queryId - ë‹¨ê±´ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
 	 *
-	 * @return °á°ú °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ resultType/resultMap ¿¡ ÀÇÇÑ ´ÜÀÏ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map)
+	 * @return ê²°ê³¼ ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ resultType/resultMap ì— ì˜í•œ ë‹¨ì¼ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
 	 */
 	public <T> T selectOne(String queryId) {
 		return getSqlSession().selectOne(queryId);
 	}
 
 	/**
-	 * ´Ü°ÇÁ¶È¸ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ë‹¨ê±´ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId - ´Ü°Ç Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param parameterObject - ´Ü°Ç Á¶È¸ Ã³¸® SQL mapping ÀÔ·Â µ¥ÀÌÅÍ(key)¸¦ ¼¼ÆÃÇÑ ÆÄ¶ó¸ŞÅÍ °´Ã¼(º¸Åë VO ¶Ç´Â Map)
+	 * @param queryId - ë‹¨ê±´ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param parameterObject - ë‹¨ê±´ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì…ë ¥ ë°ì´í„°(key)ë¥¼ ì„¸íŒ…í•œ íŒŒë¼ë©”í„° ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
 	 *
-	 * @return °á°ú °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ resultType/resultMap ¿¡ ÀÇÇÑ ´ÜÀÏ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map)
+	 * @return ê²°ê³¼ ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ resultType/resultMap ì— ì˜í•œ ë‹¨ì¼ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
 	 */
 	public <T> T selectOne(String queryId, Object parameterObject) {
 		return getSqlSession().selectOne(queryId, parameterObject);
 	}
 
 	/**
-	 * °á°ú ¸ñ·ÏÀ» Map À» º¯È¯ÇÑ´Ù.
-	 * ¸ğµç ±¸¹®ÀÌ ÆÄ¶ó¹ÌÅÍ¸¦ ÇÊ¿ä·Î ÇÏÁö´Â ¾Ê±â ¶§¹®¿¡, ÆÄ¶ó¹ÌÅÍ °´Ã¼¸¦ ¿ä±¸ÇÏÁö ¾Ê´Â ÇüÅÂ·Î ¿À¹ö·ÎµåµÇ¾ú´Ù.
+	 * ê²°ê³¼ ëª©ë¡ì„ Map ì„ ë³€í™˜í•œë‹¤.
+	 * ëª¨ë“  êµ¬ë¬¸ì´ íŒŒë¼ë¯¸í„°ë¥¼ í•„ìš”ë¡œ í•˜ì§€ëŠ” ì•Šê¸° ë•Œë¬¸ì—, íŒŒë¼ë¯¸í„° ê°ì²´ë¥¼ ìš”êµ¬í•˜ì§€ ì•ŠëŠ” í˜•íƒœë¡œ ì˜¤ë²„ë¡œë“œë˜ì—ˆë‹¤.
 	 *
-	 * @param queryId - ´Ü°Ç Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param mapKey - °á°ú °´Ã¼ÀÇ ÇÁ·ÎÆÛÆ¼ Áß ÇÏ³ª¸¦ Å°·Î »ç¿ë
+	 * @param queryId - ë‹¨ê±´ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param mapKey - ê²°ê³¼ ê°ì²´ì˜ í”„ë¡œí¼í‹° ì¤‘ í•˜ë‚˜ë¥¼ í‚¤ë¡œ ì‚¬ìš©
 	 *
-	 * @return °á°ú °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ resultType/resultMap ¿¡ ÀÇÇÑ ´ÜÀÏ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map)ÀÇ Map
+	 * @return ê²°ê³¼ ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ resultType/resultMap ì— ì˜í•œ ë‹¨ì¼ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)ì˜ Map
 	 */
 	public <K, V> Map<K, V> selectMap(String queryId, String mapKey) {
 		return getSqlSession().selectMap(queryId, mapKey);
 	}
 
 	/**
-	 * °á°ú ¸ñ·ÏÀ» Map À» º¯È¯ÇÑ´Ù.
-	 * ¸ğµç ±¸¹®ÀÌ ÆÄ¶ó¹ÌÅÍ¸¦ ÇÊ¿ä·Î ÇÏÁö´Â ¾Ê±â ¶§¹®¿¡, ÆÄ¶ó¹ÌÅÍ °´Ã¼¸¦ ¿ä±¸ÇÏÁö ¾Ê´Â ÇüÅÂ·Î ¿À¹ö·ÎµåµÇ¾ú´Ù.
+	 * ê²°ê³¼ ëª©ë¡ì„ Map ì„ ë³€í™˜í•œë‹¤.
+	 * ëª¨ë“  êµ¬ë¬¸ì´ íŒŒë¼ë¯¸í„°ë¥¼ í•„ìš”ë¡œ í•˜ì§€ëŠ” ì•Šê¸° ë•Œë¬¸ì—, íŒŒë¼ë¯¸í„° ê°ì²´ë¥¼ ìš”êµ¬í•˜ì§€ ì•ŠëŠ” í˜•íƒœë¡œ ì˜¤ë²„ë¡œë“œë˜ì—ˆë‹¤.
 	 *
-	 * @param queryId - ´Ü°Ç Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param parameterObject - ¸Ê Á¶È¸ Ã³¸® SQL mapping ÀÔ·Â µ¥ÀÌÅÍ(Á¶È¸ Á¶°Ç)¸¦ ¼¼ÆÃÇÑ ÆÄ¶ó¸ŞÅÍ °´Ã¼(º¸Åë VO ¶Ç´Â Map)
-	 * @param mapKey - °á°ú °´Ã¼ÀÇ ÇÁ·ÎÆÛÆ¼ Áß ÇÏ³ª¸¦ Å°·Î »ç¿ë
+	 * @param queryId - ë‹¨ê±´ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param parameterObject - ë§µ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì…ë ¥ ë°ì´í„°(ì¡°íšŒ ì¡°ê±´)ë¥¼ ì„¸íŒ…í•œ íŒŒë¼ë©”í„° ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
+	 * @param mapKey - ê²°ê³¼ ê°ì²´ì˜ í”„ë¡œí¼í‹° ì¤‘ í•˜ë‚˜ë¥¼ í‚¤ë¡œ ì‚¬ìš©
 	 *
-	 * @return °á°ú °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ resultType/resultMap ¿¡ ÀÇÇÑ ´ÜÀÏ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map)ÀÇ Map
+	 * @return ê²°ê³¼ ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ resultType/resultMap ì— ì˜í•œ ë‹¨ì¼ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)ì˜ Map
 	 */
 	public <K, V> Map<K, V> selectMap(String queryId, Object parameterObject, String mapKey) {
 		return getSqlSession().selectMap(queryId, parameterObject, mapKey);
 	}
 
 	/**
-	 * °á°ú ¸ñ·ÏÀ» Map À» º¯È¯ÇÑ´Ù.
-	 * ¸ğµç ±¸¹®ÀÌ ÆÄ¶ó¹ÌÅÍ¸¦ ÇÊ¿ä·Î ÇÏÁö´Â ¾Ê±â ¶§¹®¿¡, ÆÄ¶ó¹ÌÅÍ °´Ã¼¸¦ ¿ä±¸ÇÏÁö ¾Ê´Â ÇüÅÂ·Î ¿À¹ö·ÎµåµÇ¾ú´Ù.
+	 * ê²°ê³¼ ëª©ë¡ì„ Map ì„ ë³€í™˜í•œë‹¤.
+	 * ëª¨ë“  êµ¬ë¬¸ì´ íŒŒë¼ë¯¸í„°ë¥¼ í•„ìš”ë¡œ í•˜ì§€ëŠ” ì•Šê¸° ë•Œë¬¸ì—, íŒŒë¼ë¯¸í„° ê°ì²´ë¥¼ ìš”êµ¬í•˜ì§€ ì•ŠëŠ” í˜•íƒœë¡œ ì˜¤ë²„ë¡œë“œë˜ì—ˆë‹¤.
 	 *
-	 * @param queryId - ´Ü°Ç Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param parameterObject - ¸Ê Á¶È¸ Ã³¸® SQL mapping ÀÔ·Â µ¥ÀÌÅÍ(Á¶È¸ Á¶°Ç)¸¦ ¼¼ÆÃÇÑ ÆÄ¶ó¸ŞÅÍ °´Ã¼(º¸Åë VO ¶Ç´Â Map)
-	 * @param mapKey - °á°ú °´Ã¼ÀÇ ÇÁ·ÎÆÛÆ¼ Áß ÇÏ³ª¸¦ Å°·Î »ç¿ë
-	 * @param rowBounds - Æ¯Á¤ °³¼ö ¸¸Å­ÀÇ ·¹ÄÚµå¸¦ °Ç³Ê¶ç°Ô ÇÔ
+	 * @param queryId - ë‹¨ê±´ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param parameterObject - ë§µ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì…ë ¥ ë°ì´í„°(ì¡°íšŒ ì¡°ê±´)ë¥¼ ì„¸íŒ…í•œ íŒŒë¼ë©”í„° ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
+	 * @param mapKey - ê²°ê³¼ ê°ì²´ì˜ í”„ë¡œí¼í‹° ì¤‘ í•˜ë‚˜ë¥¼ í‚¤ë¡œ ì‚¬ìš©
+	 * @param rowBounds - íŠ¹ì • ê°œìˆ˜ ë§Œí¼ì˜ ë ˆì½”ë“œë¥¼ ê±´ë„ˆë„ê²Œ í•¨
 	 *
-	 * @return °á°ú °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ resultType/resultMap ¿¡ ÀÇÇÑ ´ÜÀÏ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map)ÀÇ Map
+	 * @return ê²°ê³¼ ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ resultType/resultMap ì— ì˜í•œ ë‹¨ì¼ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)ì˜ Map
 	 */
 	public <K, V> Map<K, V> selectMap(String queryId, Object parameterObject, String mapKey, RowBounds rowBounds) {
 		return getSqlSession().selectMap(queryId, parameterObject, mapKey, rowBounds);
 	}
 
 	/**
-	 * ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId - ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
+	 * @param queryId - ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
 	 *
-	 * @return °á°ú List °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ  resultType/resultMap ¿¡ ÀÇÇÑ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map)ÀÇ List
+	 * @return ê²°ê³¼ List ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ  resultType/resultMap ì— ì˜í•œ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)ì˜ List
 	 */
 	public <E> List<E> selectList(String queryId) {
 		return getSqlSession().selectList(queryId);
 	}
 
 	/**
-	 * ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId - ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param parameterObject - ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping ÀÔ·Â µ¥ÀÌÅÍ(Á¶È¸ Á¶°Ç)¸¦ ¼¼ÆÃÇÑ ÆÄ¶ó¸ŞÅÍ °´Ã¼(º¸Åë VO ¶Ç´Â Map)
+	 * @param queryId - ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param parameterObject - ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì…ë ¥ ë°ì´í„°(ì¡°íšŒ ì¡°ê±´)ë¥¼ ì„¸íŒ…í•œ íŒŒë¼ë©”í„° ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
 	 *
-	 * @return °á°ú List °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ  resultType/resultMap ¿¡ ÀÇÇÑ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map)ÀÇ List
+	 * @return ê²°ê³¼ List ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ  resultType/resultMap ì— ì˜í•œ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)ì˜ List
 	 */
 	public <E> List<E> selectList(String queryId, Object parameterObject) {
 		return getSqlSession().selectList(queryId, parameterObject);
 	}
 
 	/**
-	 * ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
+	 * ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
 	 *
-	 * @param queryId - ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param parameterObject - ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping ÀÔ·Â µ¥ÀÌÅÍ(Á¶È¸ Á¶°Ç)¸¦ ¼¼ÆÃÇÑ ÆÄ¶ó¸ŞÅÍ °´Ã¼(º¸Åë VO ¶Ç´Â Map)
-	 * @param rowBounds - Æ¯Á¤ °³¼ö ¸¸Å­ÀÇ ·¹ÄÚµå¸¦ °Ç³Ê¶ç°Ô ÇÔ
+	 * @param queryId - ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param parameterObject - ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì…ë ¥ ë°ì´í„°(ì¡°íšŒ ì¡°ê±´)ë¥¼ ì„¸íŒ…í•œ íŒŒë¼ë©”í„° ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
+	 * @param rowBounds - íŠ¹ì • ê°œìˆ˜ ë§Œí¼ì˜ ë ˆì½”ë“œë¥¼ ê±´ë„ˆë„ê²Œ í•¨
 	 *
-	 * @return °á°ú List °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ  resultType/resultMap ¿¡ ÀÇÇÑ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map)ÀÇ List
+	 * @return ê²°ê³¼ List ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ  resultType/resultMap ì— ì˜í•œ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)ì˜ List
 	 */
 	public <E> List<E> selectList(String queryId, Object parameterObject, RowBounds rowBounds) {
 		return getSqlSession().selectList(queryId, parameterObject, rowBounds);
 	}
 
 	/**
-	 * ºÎºĞ ¹üÀ§ ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping À» ½ÇÇàÇÑ´Ù.
-	 * (ºÎºĞ ¹üÀ§ - pageIndex ¿Í pageSize ±â¹İÀ¸·Î ÇöÀç ºÎºĞ ¹üÀ§ Á¶È¸¸¦ À§ÇÑ skipResults, maxResults ¸¦ °è»êÇÏ¿© ibatis È£Ãâ)
+	 * ë¶€ë¶„ ë²”ìœ„ ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì„ ì‹¤í–‰í•œë‹¤.
+	 * (ë¶€ë¶„ ë²”ìœ„ - pageIndex ì™€ pageSize ê¸°ë°˜ìœ¼ë¡œ í˜„ì¬ ë¶€ë¶„ ë²”ìœ„ ì¡°íšŒë¥¼ ìœ„í•œ skipResults, maxResults ë¥¼ ê³„ì‚°í•˜ì—¬ ibatis í˜¸ì¶œ)
 	 *
-	 * @param queryId - ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param parameterObject - ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping ÀÔ·Â µ¥ÀÌÅÍ(Á¶È¸ Á¶°Ç)¸¦ ¼¼ÆÃÇÑ ÆÄ¶ó¸ŞÅÍ °´Ã¼(º¸Åë VO ¶Ç´Â Map)
-	 * @param pageIndex - ÇöÀç ÆäÀÌÁö ¹øÈ£
-	 * @param pageSize - ÇÑ ÆäÀÌÁö Á¶È¸ ¼ö(pageSize)
+	 * @param queryId - ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param parameterObject - ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì…ë ¥ ë°ì´í„°(ì¡°íšŒ ì¡°ê±´)ë¥¼ ì„¸íŒ…í•œ íŒŒë¼ë©”í„° ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)
+	 * @param pageIndex - í˜„ì¬ í˜ì´ì§€ ë²ˆí˜¸
+	 * @param pageSize - í•œ í˜ì´ì§€ ì¡°íšŒ ìˆ˜(pageSize)
 	 *
-	 * @return ºÎºĞ ¹üÀ§ °á°ú List °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ resultType/resultMap ¿¡ ÀÇÇÑ ºÎºĞ ¹üÀ§ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map) List
+	 * @return ë¶€ë¶„ ë²”ìœ„ ê²°ê³¼ List ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ resultType/resultMap ì— ì˜í•œ ë¶€ë¶„ ë²”ìœ„ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map) List
 	 */
 	public List<?> listWithPaging(String queryId, Object parameterObject, int pageIndex, int pageSize) {
 		int skipResults = pageIndex * pageSize;
@@ -212,14 +211,14 @@ public abstract class AbstractMapper extends SqlSessionDaoSupport{
 	}
 
 	/**
-	 * SQL Á¶È¸ °á°ú¸¦ ResultHandler¸¦ ÀÌ¿ëÇØ¼­ Ãâ·ÂÇÑ´Ù.
-	 * ResultHandler¸¦ »ó¼ÓÇØ ±¸ÇöÇÑ Ä¿½ºÅÒ ÇÚµé·¯ÀÇ handleResult() ¸Ş¼­µå¿¡ µû¶ó ½ÇÇàµÈ´Ù.
+	 * SQL ì¡°íšŒ ê²°ê³¼ë¥¼ ResultHandlerë¥¼ ì´ìš©í•´ì„œ ì¶œë ¥í•œë‹¤.
+	 * ResultHandlerë¥¼ ìƒì†í•´ êµ¬í˜„í•œ ì»¤ìŠ¤í…€ í•¸ë“¤ëŸ¬ì˜ handleResult() ë©”ì„œë“œì— ë”°ë¼ ì‹¤í–‰ëœë‹¤.
 	 *
-	 * @param queryId - ¸®½ºÆ® Á¶È¸ Ã³¸® SQL mapping Äõ¸® ID
-	 * @param handler - Á¶È¸ °á°ú¸¦ Á¦¾îÇÏ±â À§ÇØ ±¸ÇöÇÑ ResultHandler
+	 * @param queryId - ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì²˜ë¦¬ SQL mapping ì¿¼ë¦¬ ID
+	 * @param handler - ì¡°íšŒ ê²°ê³¼ë¥¼ ì œì–´í•˜ê¸° ìœ„í•´ êµ¬í˜„í•œ ResultHandler
 	 * @return
 	 *
-	 * @return °á°ú List °´Ã¼ - SQL mapping ÆÄÀÏ¿¡¼­ ÁöÁ¤ÇÑ resultType/resultMap ¿¡ ÀÇÇÑ °á°ú °´Ã¼(º¸Åë VO ¶Ç´Â Map)ÀÇ List
+	 * @return ê²°ê³¼ List ê°ì²´ - SQL mapping íŒŒì¼ì—ì„œ ì§€ì •í•œ resultType/resultMap ì— ì˜í•œ ê²°ê³¼ ê°ì²´(ë³´í†µ VO ë˜ëŠ” Map)ì˜ List
 	 */
 	public void listToOutUsingResultHandler(String queryId, ResultHandler handler) {
 		getSqlSession().select(queryId, handler);

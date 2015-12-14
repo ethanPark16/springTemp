@@ -10,7 +10,7 @@ import com.pidotech.mari.sample.service.SampleVO;
 public interface SampleMapper {
 	
 	/**
-	 * selectUser - ´ÜÀÏ »ç¿ëÀÚ Á¤º¸ Á¶È¸
+	 * selectUser - ë‹¨ì¼ ì‚¬ìš©ì ì •ë³´ ì¡°íšŒ
 	 *
 	 * @return SampleVO
 	 * @param SampleVO
@@ -19,7 +19,7 @@ public interface SampleMapper {
 	public HashMap<String, String> selectUser(SampleVO vo) throws Exception;
 	
 	/**
-	 * selectUserList - »ç¿ëÀÚ ¸®½ºÆ® Á¶È¸
+	 * selectUserList - ì‚¬ìš©ì ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ
 	 *
 	 * @return List<SampleVO>
 	 * @param SampleVO

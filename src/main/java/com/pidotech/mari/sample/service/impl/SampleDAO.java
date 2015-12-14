@@ -11,7 +11,7 @@ import com.pidotech.mari.sample.service.SampleVO;
 @Repository("sampleDAO")
 public class SampleDAO extends AbstractMapper {
 	/**
-	 * selectUser - ´ÜÀÏ »ç¿ëÀÚ Á¤º¸ Á¶È¸
+	 * selectUser - ë‹¨ì¼ ì‚¬ìš©ì ì •ë³´ ì¡°íšŒ
 	 *
 	 * @return SampleVO
 	 * @param vo SampleVO
@@ -26,7 +26,7 @@ public class SampleDAO extends AbstractMapper {
 	}
 	
 	/**
-	 * selectUserList - »ç¿ëÀÚ ¸®½ºÆ® Á¶È¸
+	 * selectUserList - ì‚¬ìš©ì ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ
 	 *
 	 * @return List<SampleVO>
 	 * @param vo SampleVO

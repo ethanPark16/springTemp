@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public interface SampleService {
 	
 	/**
-	 * selectUser - ´ÜÀÏ´ë»ó À¯ÀúÁ¶È¸
+	 * selectUser - ë‹¨ì¼ëŒ€ìƒ ìœ ì €ì¡°íšŒ
 	 *
 	 * @return SempleVO
 	 * @param SampleVO
@@ -17,7 +17,7 @@ public interface SampleService {
 	public HashMap<String, String> selectUser(SampleVO vo) throws Exception;
 	
 	/**
-	 * selectUserList - À¯Àú ¸®½ºÆ® Á¶È¸
+	 * selectUserList - ìœ ì € ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ
 	 *
 	 * @return List<SempleVO>
 	 * @param SampleVO
@@ -26,7 +26,7 @@ public interface SampleService {
 	public List<SampleVO> selectUserList(SampleVO vo) throws Exception;
 	
 	/**
-	 * insertUser - À¯Àúµî·Ï
+	 * insertUser - ìœ ì €ë“±ë¡
 	 *
 	 * @return void
 	 * @param SampleVO
@@ -35,7 +35,7 @@ public interface SampleService {
 	public int insertUser(SampleVO vo) throws Exception;
 	
 	/**
-	 * updateUser - À¯ÀúÁ¤º¸ ¼öÁ¤
+	 * updateUser - ìœ ì €ì •ë³´ ìˆ˜ì •
 	 *
 	 * @return void
 	 * @param SampleVO
@@ -44,7 +44,7 @@ public interface SampleService {
 	public int updateUser(SampleVO vo) throws Exception;
 	
 	/**
-	 * deleteUser - À¯Àú»èÁ¦
+	 * deleteUser - ìœ ì €ì‚­ì œ
 	 *
 	 * @return void
 	 * @param SampleVO

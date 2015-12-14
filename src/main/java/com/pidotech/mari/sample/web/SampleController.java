@@ -16,7 +16,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.pidotech.mari.HomeController;
 import com.pidotech.mari.cmm.security.MariUserDetailsHelper;
 import com.pidotech.mari.cmm.service.LoginVO;
 import com.pidotech.mari.sample.service.SampleService;
@@ -25,7 +24,7 @@ import com.pidotech.mari.sample.service.SampleVO;
 /**
  * SampleController.java
  * 
- * °¢Á¾ Ã³¸®¸¦ À§ÇÑ Sample Controller
+ * ê°ì¢… ì²˜ë¦¬ë¥¼ ìœ„í•œ Sample Controller
  *
  * @author ethan
  * @since 2015. 10. 27.
@@ -77,7 +76,7 @@ public class SampleController {
 		
 		logger.info("Welcome samplePageMain! The client locale is {}.", locale);
 
-		/*	ÀÎÁõ¿©ºÎ¸¦ ÆÇ´ÜÇÏ¿© »ç¿ëÀÚ °èÁ¤Á¤º¸¸¦ °¡Á®¿À´Â ¹æ¹ı
+		/*	ì¸ì¦ì—¬ë¶€ë¥¼ íŒë‹¨í•˜ì—¬ ì‚¬ìš©ì ê³„ì •ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ëŠ” ë°©ë²•
 		LoginVO user = (MariUserDetailsHelper.isAuthenticated())
 						? (LoginVO) MariUserDetailsHelper.getAuthenticatedUser() : new LoginVO();
 		 */
@@ -145,7 +144,7 @@ public class SampleController {
 	}
 	
 	/**
-	 * dataTableList (VO & DAO »ç¿ë ¿¹Á¦)
+	 * dataTableList (VO & DAO ì‚¬ìš© ì˜ˆì œ)
 	 *
 	 * @return String
 	 * @param request HttpServletRequest
@@ -166,7 +165,7 @@ public class SampleController {
 	}
 	
 	/**
-	 * getSempleList (Map & Mapper Interface »ç¿ë ¿¹Á¦)
+	 * getSempleList (Map & Mapper Interface ì‚¬ìš© ì˜ˆì œ)
 	 *
 	 * @return String
 	 * @param request HttpServletRequest

@@ -36,7 +36,7 @@ public class SampleServiceImpl implements SampleService {
 	@Override
 	public List<SampleVO> selectUserList(SampleVO vo) throws Exception {
 		// TODO Auto-generated method stub
-		return sampleDAO.selectUserList(vo);
+		return sampleMapper.selectUserList(vo);
 	}
 
 	@Override

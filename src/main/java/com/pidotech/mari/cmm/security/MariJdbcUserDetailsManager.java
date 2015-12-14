@@ -26,7 +26,7 @@ import com.pidotech.mari.cmm.util.MariObjectUtil;
 /**
  * MariJdbcUserDetailsManager.java
  * 
- * JdbcUserDetailsManagerÀ» »ó¼ÓÇÑ Spring security JDBC Manager
+ * JdbcUserDetailsManagerì„ ìƒì†í•œ Spring security JDBC Manager
  *	
  * @author ethan
  * @since 2015. 11. 17.
@@ -42,7 +42,7 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 	private RoleHierarchy roleHierarchy = null;
 	
 	/**
-     * »ç¿ëÀÚ Å×ÀÌºíÀÇ Äõ¸® Á¶È¸ ÄÃ·³°ú ¼¼¼Ç¿¡¼­ »ç¿ëÇÒ »ç¿ëÀÚ VO¿Í ¸ŞÇÎ ÇÒ Å¬·¡½º¸¦ ÁöÁ¤ÇÑ´Ù.
+     * ì‚¬ìš©ì í…Œì´ë¸”ì˜ ì¿¼ë¦¬ ì¡°íšŒ ì»¬ëŸ¼ê³¼ ì„¸ì…˜ì—ì„œ ì‚¬ìš©í•  ì‚¬ìš©ì VOì™€ ë©”í•‘ í•  í´ë˜ìŠ¤ë¥¼ ì§€ì •í•œë‹¤.
      * 
      * @param mapClass
      */
@@ -51,7 +51,7 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 	}
 	
 	/**
-     * Role Hierarchy¸¦ Áö¿øÇÑ´Ù.
+     * Role Hierarchyë¥¼ ì§€ì›í•œë‹¤.
      * 
      * @param roleHierarchy
      */
@@ -60,7 +60,7 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
     }
 	
     /**
-     * JdbcUserDetailsManager Å¬·¡½º ÀçÁ¤ÀÇ
+     * JdbcUserDetailsManager í´ë˜ìŠ¤ ì¬ì •ì˜
      */
 	@Override
 	protected void initDao() throws ApplicationContextException {
@@ -82,8 +82,8 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 	}
 	
 	/**
-     * JdbcDaoImpl Å¬·¡½ºÀÇ loadUsersByUsername ¸Ş¼Òµå ÀçÁ¤ÀÇ.
-     * »ç¿ëÀÚ¸í(¶Ç´Â ID)·Î MariUserDetailsÀÇ Á¤º¸¸¦ Á¶È¸ÇÑ´Ù.
+     * JdbcDaoImpl í´ë˜ìŠ¤ì˜ loadUsersByUsername ë©”ì†Œë“œ ì¬ì •ì˜.
+     * ì‚¬ìš©ìëª…(ë˜ëŠ” ID)ë¡œ MariUserDetailsì˜ ì •ë³´ë¥¼ ì¡°íšŒí•œë‹¤.
      * 
      * @param username
      * @return
@@ -125,8 +125,8 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 	}
 	
 	/**
-     * JdbcDaoImpl Å¬·¡½ºÀÇ loadUsersByUsername ¸Ş¼Òµå ÀçÁ¤ÀÇ.
-     * »ç¿ëÀÚ¸í(¶Ç´Â ID)·Î UserDetails Á¤º¸¸¦ Á¶È¸ÇÏ¿© ¸®½ºÆ® Çü½ÄÀ¸·Î ÀúÀåÇÑ´Ù.
+     * JdbcDaoImpl í´ë˜ìŠ¤ì˜ loadUsersByUsername ë©”ì†Œë“œ ì¬ì •ì˜.
+     * ì‚¬ìš©ìëª…(ë˜ëŠ” ID)ë¡œ UserDetails ì •ë³´ë¥¼ ì¡°íšŒí•˜ì—¬ ë¦¬ìŠ¤íŠ¸ í˜•ì‹ìœ¼ë¡œ ì €ì¥í•œë‹¤.
      */
 	@Override
 	protected List<UserDetails> loadUsersByUsername(String username) {
@@ -141,7 +141,7 @@ public class MariJdbcUserDetailsManager extends JdbcUserDetailsManager {
 	}
 	
 	/**
-     * ÀÎÁõµÈ »ç¿ëÀÚ ÀÌ¸§À¸·Î »ç¿ëÀÚÁ¤º¸(MariUserDetails)¸¦ °¡Á®¿Â´Ù.
+     * ì¸ì¦ëœ ì‚¬ìš©ì ì´ë¦„ìœ¼ë¡œ ì‚¬ìš©ìì •ë³´(MariUserDetails)ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
      * 
      * @return
      * @throws UsernameNotFoundException

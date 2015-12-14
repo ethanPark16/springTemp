@@ -42,8 +42,8 @@
 	</sec:authentication-manager>
 	
 	<bean id="jdbcUserDetailsManager" class="com.pidotech.mari.cmm.security.MariJdbcUserDetailsManager">
-		<property name="usersByUsernameQuery" value="SELECT USER_ID, PASSWORD, ENABLED, USER_NAME, ORGNZT_ID, ORGNZT_NM, ESNTL_ID FROM MOBILITY.USER_INFO_MST WHERE USER_ID = ?"></property>
-		<property name="authoritiesByUsernameQuery" value="SELECT A.SCRTY_DTRMN_TRGET_ID USER_ID, A.AUTHOR_CODE AUTHORITY FROM MOBILITY.LETTNEMPLYRSCRTYESTBS A, MOBILITY.USER_INFO_MST B WHERE A.SCRTY_DTRMN_TRGET_ID = B.ESNTL_ID AND B.USER_ID = ?"></property>
+		<property name="usersByUsernameQuery" value="SELECT USER_ID, PASSWORD, 1 ENABLED, USER_NAME, ORGNZT_ID, DEPT_CODE FROM USER_INFO_MST WHERE USER_ID = ? AND USER_STATUS = '1'"></property>
+		<property name="authoritiesByUsernameQuery" value="SELECT A.USER_ID, A.AUTHOR_CODE AUTHORITY FROM USER_INFO_MST A WHERE A.USER_ID = ? AND USER_STATUS = '1'"></property>
 		<property name="mapperClass" value="com.pidotech.mari.cmm.security.MariSessionMapping"/>
 		<property name="roleHierarchy" ref="roleHierarchy"/>
 		<property name="dataSource" ref="dataSource"/>

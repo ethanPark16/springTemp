@@ -2,7 +2,7 @@ package com.pidotech.mari.sample.service;
 
 /**
  * SampleVO.java
- * Sample ¿ë VO
+ * Sample ìš© VO
  *
  * @author ethan
  * @since 2015. 10. 27.

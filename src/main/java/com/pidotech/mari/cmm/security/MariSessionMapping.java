@@ -9,7 +9,7 @@ import com.pidotech.mari.cmm.service.LoginVO;
 
 /**
  * MariSessionMapping.java
- * ÀÎÁõ½Ã °¡Á®¿Â Á¤º¸¸¦ °¡Á®¿Í ¼¼¼Ç¿¡ ´ã¾ÆÁØ´Ù.
+ * ì¸ì¦ì‹œ ê°€ì ¸ì˜¨ ì •ë³´ë¥¼ ê°€ì ¸ì™€ ì„¸ì…˜ì— ë‹´ì•„ì¤€ë‹¤.
  *
  * @author ethan
  * @since 2015. 11. 25.

@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.User;
 
 /**
  * MariUserDetails.java
- * spring security ÀÇ User °´Ã¼¸¦ »ó¼Ó¹Ş¾Æ »ç¿ëÀÚ °èÁ¤Á¤º¸¸¦ ¼¼¼ÇÀ¸·Î °ü¸®ÇÑ´Ù.
+ * spring security ì˜ User ê°ì²´ë¥¼ ìƒì†ë°›ì•„ ì‚¬ìš©ì ê³„ì •ì •ë³´ë¥¼ ì„¸ì…˜ìœ¼ë¡œ ê´€ë¦¬í•œë‹¤.
  *
  * @author ethan
  * @since 2015. 11. 25.
@@ -21,16 +21,16 @@ public class MariUserDetails extends User {
 	private Object userVO;
 	
 	/**
-     * User Å¬·¡½ºÀÇ »ı¼ºÀÚ Override
+     * User í´ë˜ìŠ¤ì˜ ìƒì„±ì Override
      * 
-     * @param username »ç¿ëÀÚ°èÁ¤
-     * @param password »ç¿ëÀÚ ÆĞ½º¿öµå
-     * @param enabled »ç¿ëÀÚ°èÁ¤ »ç¿ë¿©ºÎ
+     * @param username ì‚¬ìš©ìê³„ì •
+     * @param password ì‚¬ìš©ì íŒ¨ìŠ¤ì›Œë“œ
+     * @param enabled ì‚¬ìš©ìê³„ì • ì‚¬ìš©ì—¬ë¶€
      * @param accountNonExpired
      * @param credentialsNonExpired
      * @param accountNonLocked
      * @param authorities
-     * @param userVO »ç¿ëÀÚ VO°´Ã¼
+     * @param userVO ì‚¬ìš©ì VOê°ì²´
      * @throws IllegalArgumentException
      */
     public MariUserDetails(String username, String password, boolean enabled,
@@ -45,7 +45,7 @@ public class MariUserDetails extends User {
     }
 
     /**
-     * MariUserDetails »ı¼ºÀÚ
+     * MariUserDetails ìƒì„±ì
      * 
      * @param username
      * @param password
@@ -60,18 +60,18 @@ public class MariUserDetails extends User {
     }
 
     /**
-     * ÀÎÁõ °´Ã¼ ¾ò±â.
+     * ì¸ì¦ ê°ì²´ ì–»ê¸°.
      * 
-     * @return »ç¿ëÀÚVO °´Ã¼
+     * @return ì‚¬ìš©ìVO ê°ì²´
      */
     public Object getUserVO() {
         return userVO;
     }
 
     /**
-     * ÀÎÁõ °´Ã¼ ÁöÁ¤.
+     * ì¸ì¦ ê°ì²´ ì§€ì •.
      * 
-     * @param mariVO »ç¿ëÀÚVO°´Ã¼
+     * @param mariVO ì‚¬ìš©ìVOê°ì²´
      */
     public void setUserVO(Object userVO) {
         this.userVO = userVO;

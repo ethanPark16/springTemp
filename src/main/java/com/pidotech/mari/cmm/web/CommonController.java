@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * CommonController.java
- * ÇÁ·¹ÀÓ¿öÅ© °ø¿ë È­¸é controller
+ * í”„ë ˆì„ì›Œí¬ ê³µìš© í™”ë©´ controller
  *
  * @author ethan
  * @since 2015. 11. 19.

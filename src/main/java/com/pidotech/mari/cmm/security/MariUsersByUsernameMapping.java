@@ -11,7 +11,7 @@ import org.springframework.jdbc.object.MappingSqlQuery;
 
 /**
  * MariUsersByUsernameMapping.java
- * UsersByUsernameMapping À» ÅëÇØ »ç¿ëÀÚ °èÁ¤Á¤º¸¸¦ °¡Á®¿À´Â Ãß»ó°´Ã¼
+ * UsersByUsernameMapping ì„ í†µí•´ ì‚¬ìš©ì ê³„ì •ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ëŠ” ì¶”ìƒê°ì²´
  *
  * @author ethan
  * @since 2015. 11. 25.
@@ -20,7 +20,7 @@ import org.springframework.jdbc.object.MappingSqlQuery;
  */
 public abstract class MariUsersByUsernameMapping extends MappingSqlQuery<MariUserDetails>{
 	/**
-     * »ç¿ëÀÚÁ¤º¸¸¦ Å×ÀÌºí¿¡¼­ Á¶È¸ÇÏ¿© »ç¿ëÀÚ°´Ã¼¿¡ ¸ÅÇÎÇÑ´Ù.
+     * ì‚¬ìš©ìì •ë³´ë¥¼ í…Œì´ë¸”ì—ì„œ ì¡°íšŒí•˜ì—¬ ì‚¬ìš©ìê°ì²´ì— ë§¤í•‘í•œë‹¤.
      * @param ds
      * @param usersByUsernameQuery
      */

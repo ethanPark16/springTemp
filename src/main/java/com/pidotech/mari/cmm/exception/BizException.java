@@ -3,7 +3,7 @@ package com.pidotech.mari.cmm.exception;
 import java.text.MessageFormat;
 
 /**
- * BizException : ºñÁî´Ï½º ¼­ºñ½º ±¸ÇöÃ¼¿¡¼­ ¹ß»ı½ÃÅ°´Â Exception .
+ * BizException : ë¹„ì¦ˆë‹ˆìŠ¤ ì„œë¹„ìŠ¤ êµ¬í˜„ì²´ì—ì„œ ë°œìƒì‹œí‚¤ëŠ” Exception .
  * 
  * @author ethan park
  * @since 2015.10.27
@@ -31,46 +31,46 @@ public class BizException extends Exception {
 	}
 
 	/**
-	 * BizException ±âº» »ı¼ºÀÚ.
+	 * BizException ê¸°ë³¸ ìƒì„±ì.
 	 */
 	public BizException() {
 		this("BaseException without message", null, null);
 	}
 
 	/**
-	 * BaseException »ı¼ºÀÚ.
+	 * BaseException ìƒì„±ì.
 	 * 
-	 * @param defaultMessage ¸Ş¼¼Áö ÁöÁ¤
+	 * @param defaultMessage ë©”ì„¸ì§€ ì§€ì •
 	 */
 	public BizException(String defaultMessage) {
 		this(defaultMessage, null, null);
 	}
 
 	/**
-	 * BaseException »ı¼ºÀÚ.
+	 * BaseException ìƒì„±ì.
 	 * 
-	 * @param wrappedException  ¿øÀÎ Exception
+	 * @param wrappedException  ì›ì¸ Exception
 	 */
 	public BizException(Throwable wrappedException) {
 		this("BizException without message", null, wrappedException);
 	}
 
 	/**
-	 * BaseException »ı¼ºÀÚ.
+	 * BaseException ìƒì„±ì.
 	 * 
-	 * @param defaultMessage ¸Ş¼¼Áö ÁöÁ¤
-	 * @param wrappedException ¿øÀÎ Exception
+	 * @param defaultMessage ë©”ì„¸ì§€ ì§€ì •
+	 * @param wrappedException ì›ì¸ Exception
 	 */
 	public BizException(String defaultMessage, Throwable wrappedException) {
 		this(defaultMessage, null, wrappedException);
 	}
 
 	/**
-	 * BaseException »ı¼ºÀÚ.
+	 * BaseException ìƒì„±ì.
 	 * 
-	 * @param defaultMessage ¸Ş¼¼Áö ÁöÁ¤
-	 * @param messageParameters Ä¡È¯µÉ ¸Ş¼¼Áö ¸®½ºÆ®
-	 * @param wrappedException ¿øÀÎ Exception
+	 * @param defaultMessage ë©”ì„¸ì§€ ì§€ì •
+	 * @param messageParameters ì¹˜í™˜ë  ë©”ì„¸ì§€ ë¦¬ìŠ¤íŠ¸
+	 * @param wrappedException ì›ì¸ Exception
 	 */
 	public BizException(String defaultMessage, Object[] messageParameters, Throwable wrappedException) {
 		super(wrappedException);

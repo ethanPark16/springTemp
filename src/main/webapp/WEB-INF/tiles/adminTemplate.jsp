@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="/resources/css/bootstrap/dataTables.bootstrap.css">    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/resources/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/resources/css/AdminLTE.css">
     <link rel="stylesheet" href="/resources/css/skins/skin-black.css">

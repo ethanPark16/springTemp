@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * MariObjectUtil.java
- * °´Ã¼ ·ÎµùÀ» Áö¿øÇÏ´Â À¯Æ¿
+ * ê°ì²´ ë¡œë”©ì„ ì§€ì›í•˜ëŠ” ìœ í‹¸
  *
  * @author ethan
  * @since 2015. 11. 25.
@@ -18,7 +18,7 @@ public class MariObjectUtil {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MariObjectUtil.class);
 	
 	/**
-     * Å¬·¡½º¸íÀ¸·Î °´Ã¼¸¦ ·ÎµùÇÑ´Ù.
+     * í´ë˜ìŠ¤ëª…ìœ¼ë¡œ ê°ì²´ë¥¼ ë¡œë”©í•œë‹¤.
      * 
      * @param className
      * @return
@@ -37,7 +37,7 @@ public class MariObjectUtil {
 	}
 
     /**
-     * Å¬·¡½º¸íÀ¸·Î °´Ã¼¸¦ ·ÎµåÇÑ ÈÄ ÀÎ½ºÅÏ½ºÈ­ ÇÑ´Ù.
+     * í´ë˜ìŠ¤ëª…ìœ¼ë¡œ ê°ì²´ë¥¼ ë¡œë“œí•œ í›„ ì¸ìŠ¤í„´ìŠ¤í™” í•œë‹¤.
      * 
      * @param className
      * @return
@@ -68,8 +68,8 @@ public class MariObjectUtil {
 	}
 
     /**
-     * Å¬·¡½º¸íÀ¸·Î ÆÄ¶ó¸ÅÅÍ°¡ ÀÖ´Â Å¬·¡½ºÀÇ »ı¼ºÀÚ¸¦ ÀÎ½ºÅÏ½ºÈ­ ÇÑ´Ù.
-     * ¿¹) Class <?> clazz = EgovObjectUtil.loadClass(this.mapClass);
+     * í´ë˜ìŠ¤ëª…ìœ¼ë¡œ íŒŒë¼ë§¤í„°ê°€ ìˆëŠ” í´ë˜ìŠ¤ì˜ ìƒì„±ìë¥¼ ì¸ìŠ¤í„´ìŠ¤í™” í•œë‹¤.
+     * ì˜ˆ) Class <?> clazz = EgovObjectUtil.loadClass(this.mapClass);
      * Constructor <?> constructor = clazz.getConstructor(new Class[]{DataSource.class, String.class});
      * Object [] params = new Object [] {
      *     getDataSource(), getUsersByUsernameQuery()
@@ -115,10 +115,10 @@ public class MariObjectUtil {
 	}
 
     /**
-     * °´Ã¼°¡ Null ÀÎÁö È®ÀÎÇÑ´Ù.
+     * ê°ì²´ê°€ Null ì¸ì§€ í™•ì¸í•œë‹¤.
      * 
      * @param object
-     * @return NullÀÎ°æ¿ì true / NullÀÌ ¾Æ´Ñ°æ¿ì false
+     * @return Nullì¸ê²½ìš° true / Nullì´ ì•„ë‹Œê²½ìš° false
      */
     public static boolean isNull(Object object) {
         return ((object == null) || object.equals(null));

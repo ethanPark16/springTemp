@@ -17,7 +17,7 @@ import com.pidotech.mari.cmm.util.MariObjectUtil;
 
 /**
  * MariUserDetailsHelper.java
- * ÀÎÁõµÈ »ç¿ëÀÚ °èÁ¤ Á¤º¸ Á¦°ø À¯Æ¿¸®Æ¼ 
+ * ì¸ì¦ëœ ì‚¬ìš©ì ê³„ì • ì •ë³´ ì œê³µ ìœ í‹¸ë¦¬í‹° 
  *
  * @author ethan
  * @since 2015. 11. 25.
@@ -28,9 +28,9 @@ public final class MariUserDetailsHelper {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MariUserDetailsHelper.class);
 	
 	/**
-     * ÀÎÁõµÈ »ç¿ëÀÚ°´Ã¼¸¦ VOÇü½ÄÀ¸·Î °¡Á®¿Â´Ù.
+     * ì¸ì¦ëœ ì‚¬ìš©ìê°ì²´ë¥¼ VOí˜•ì‹ìœ¼ë¡œ ê°€ì ¸ì˜¨ë‹¤.
      * 
-     * @return »ç¿ëÀÚ ValueObject
+     * @return ì‚¬ìš©ì ValueObject
      */
     public static Object getAuthenticatedUser() {
         SecurityContext context = SecurityContextHolder.getContext();
@@ -54,14 +54,14 @@ public final class MariUserDetailsHelper {
     }
 
     /**
-     * ÀÎÁõµÈ »ç¿ëÀÚÀÇ ±ÇÇÑ Á¤º¸¸¦ °¡Á®¿Â´Ù.
-     * ¿¹) [ROLE_ADMIN, ROLE_USER,
+     * ì¸ì¦ëœ ì‚¬ìš©ìì˜ ê¶Œí•œ ì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
+     * ì˜ˆ) [ROLE_ADMIN, ROLE_USER,
      * ROLE_A, ROLE_B, ROLE_RESTRICTED,
      * IS_AUTHENTICATED_FULLY,
      * IS_AUTHENTICATED_REMEMBERED,
      * IS_AUTHENTICATED_ANONYMOUSLY]
      * 
-     * @return »ç¿ëÀÚ ±ÇÇÑÁ¤º¸ ¸ñ·Ï
+     * @return ì‚¬ìš©ì ê¶Œí•œì •ë³´ ëª©ë¡
      */
     public static List<String> getAuthorities() {
         List<String> listAuth = new ArrayList<String>();
@@ -90,9 +90,9 @@ public final class MariUserDetailsHelper {
     }
 
     /**
-     * ÀÎÁõµÈ »ç¿ëÀÚ ¿©ºÎ¸¦ Ã¼Å©ÇÑ´Ù.
+     * ì¸ì¦ëœ ì‚¬ìš©ì ì—¬ë¶€ë¥¼ ì²´í¬í•œë‹¤.
      * 
-     * @return ÀÎÁõµÈ »ç¿ëÀÚ ¿©ºÎ(TRUE / FALSE)
+     * @return ì¸ì¦ëœ ì‚¬ìš©ì ì—¬ë¶€(TRUE / FALSE)
      */
     public static Boolean isAuthenticated() {
         SecurityContext context = SecurityContextHolder.getContext();
@@ -115,7 +115,7 @@ public final class MariUserDetailsHelper {
     }
 
     /**
-     * ±âº» algorithmd(SHA-256)¿¡ ´ëÇÑ ÆĞ½º¿öµå ¾ò±â.
+     * ê¸°ë³¸ algorithmd(SHA-256)ì— ëŒ€í•œ íŒ¨ìŠ¤ì›Œë“œ ì–»ê¸°.
      * 
      * @param password
      * @return

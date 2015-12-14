@@ -14,27 +14,27 @@ public class LoginVO implements Serializable {
 	
 	private static final long serialVersionUID = -8274004534207618049L;
 	
-	/** ¾ÆÀÌµğ */
+	/** ì•„ì´ë”” */
 	private String id;
-	/** ÀÌ¸§ */
+	/** ì´ë¦„ */
 	private String name;
-	/** ÁÖ¹Îµî·Ï¹øÈ£ */
+	/** ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ */
 	private String ihidNum;
-	/** ÀÌ¸ŞÀÏÁÖ¼Ò */
+	/** ì´ë©”ì¼ì£¼ì†Œ */
 	private String email;
-	/** ºñ¹Ğ¹øÈ£ */
+	/** ë¹„ë°€ë²ˆí˜¸ */
 	private String password;
-	/** ºñ¹Ğ¹øÈ£ ÈùÆ® */
+	/** ë¹„ë°€ë²ˆí˜¸ íŒíŠ¸ */
 	private String passwordHint;
-	/** ºñ¹Ğ¹øÈ£ Á¤´ä */
+	/** ë¹„ë°€ë²ˆí˜¸ ì •ë‹µ */
 	private String passwordCnsr;
-	/** Á¶Á÷(ºÎ¼­)ID */
+	/** ì¡°ì§(ë¶€ì„œ)ID */
 	private String orgnztId;
-	/** Á¶Á÷(ºÎ¼­)¸í */
+	/** ì¡°ì§(ë¶€ì„œ)ëª… */
 	private String orgnztNm;
-	/** ·Î±×ÀÎ ÈÄ ÀÌµ¿ÇÒ ÆäÀÌÁö */
+	/** ë¡œê·¸ì¸ í›„ ì´ë™í•  í˜ì´ì§€ */
 	private String url;
-	/** »ç¿ëÀÚ IPÁ¤º¸ */
+	/** ì‚¬ìš©ì IPì •ë³´ */
 	private String ip;
 	
 	
